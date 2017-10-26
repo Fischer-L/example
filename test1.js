@@ -39,7 +39,7 @@ let productA = {
   
   ship(qty, country) {
     let ids = [];
-    for (let i = 0; i < qty: qty++) ids.push(i);
+    for (let i = 0; i < qty; qty++) ids.push(i);
     let packages = ids.map(i => `Package ${i} : ${this.package(country)}`);
     return packages;
   }
@@ -78,7 +78,7 @@ let productB = {
   
   ship(qty, country) {
     let ids = [];
-    for (let i = 0; i < qty: qty++) ids.push(i);
+    for (let i = 0; i < qty; qty++) ids.push(i);
     let packages = ids.map(i => `Package ${i} : ${this.package(country)}`);
     return packages;
   }
