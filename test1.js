@@ -45,7 +45,7 @@ let productA = {
   }
 };
 
-let productA = {
+let productB = {
   _price: 101,
   _name: "productB",
   
