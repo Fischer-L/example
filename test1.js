@@ -25,7 +25,7 @@ let productA = {
   getGlobalPrice(country) {
     let rate = 1;
     switch (country) {
-      case "US": rate = USD_RATE; break;
+      case "US": rate = US_RATE; break;
       case "UK": rate = UK_RATE; break;
     }
     return rate * this.getLocalPrice();
@@ -64,7 +64,7 @@ let productB = {
   getGlobalPrice(country) {
     let rate = 1;
     switch (country) {
-      case "US": rate = USD_RATE; break;
+      case "US": rate = US_RATE; break;
       case "UK": rate = UK_RATE; break;
     }
     return rate * this.getLocalPrice();
