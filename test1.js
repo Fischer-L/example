@@ -88,5 +88,10 @@ win.shipA = () => console.log(`Ship ${productA.ship(3, "US")}`);
 win.shipB = () => {
   console.log(`Ship ${productB.ship(6, "UK")}`);
 };
+  
+function AA(a) { function BB(a) { return a + 1;
+  }
+  return BB(a);
+}
 
 })(window);
