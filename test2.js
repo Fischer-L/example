@@ -2,7 +2,7 @@
   
   
   
-  let global_variable = "I'm global";
+  var global_variable = "I'm global";
   function exchange() {
     let currency = {
       _allowed: true,
