@@ -88,17 +88,17 @@ win.shipA = () => console.log(`Ship ${productA.ship(3, "US")}`);
 win.shipB = () => {
   console.log(`Ship ${productB.ship(6, "UK")}`);
   
-  let currency = {
+  var currency = {
     _allowed: true,
     
     country: "GBP",
     
-    exchange(usd) {
+    exchange: function(usd) {
       
-      let helper = {
+      var helper = {
         rate: 1.33,
         
-        cal(usd) {
+        cal: function(usd) {
           if (currency._allowed) {
              return this.rate * usd;
           }
