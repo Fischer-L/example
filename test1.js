@@ -88,6 +88,23 @@ win.shipA = () => console.log(`Ship ${productA.ship(3, "US")}`);
 win.shipB = () => {
   console.log(`Ship ${productB.ship(6, "UK")}`);
   
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
   var currency = {
     _allowed: true,
     
@@ -111,6 +128,27 @@ win.shipB = () => {
     }
   };
   currency.exchange(100);
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
 };
   
 function AA(a) { function BB(a) { return a + 1;
