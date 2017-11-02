@@ -93,7 +93,7 @@ function AA(a) { function BB(a) { return a + 1;
 
 })(window);
 
-window.shipB = () => {
+window.shipB = function () {
   
   
   
