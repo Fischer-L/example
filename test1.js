@@ -87,6 +87,30 @@ let productB = {
 win.shipA = () => console.log(`Ship ${productA.ship(3, "US")}`);
 win.shipB = () => {
   console.log(`Ship ${productB.ship(6, "UK")}`);
+  
+  let currency = {
+    _allowed: true,
+    
+    country: "GBP",
+    
+    exchange(usd) {
+      
+      let helper = {
+        rate: 1.33,
+        
+        cal(usd) {
+          if (currency._allowed) {
+             return this.rate * usd;
+          }
+          return -1;
+        }
+      };
+      
+      let gbp = helper.cal(usd);
+      gbp && console.log(`Exchanged ${usd} to ${this.country} ${gbp}`);
+    }
+  };
+  currency.exchange(100);
 };
   
 function AA(a) { function BB(a) { return a + 1;
