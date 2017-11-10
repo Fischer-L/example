@@ -1,31 +1,32 @@
+import { getName, getAge } from "lib/module.js";
   
+console.log(getName(), getAge());  
+
   
-  
-  
-  var global_variable = "I'm global";
-  function exchange() {
-    let currency = {
-      _allowed: true,
+var global_variable = "I'm global";
+function exchange() {
+  let currency = {
+    _allowed: true,
 
-      country: "GBP",
+    country: "GBP",
 
-      exchange: function(usd) {
+    exchange: function(usd) {
 
-        let helper = {
-          rate: 1.33,
+      let helper = {
+        rate: 1.33,
 
-          cal: function(usd) {
-            if (currency._allowed) {
-               return this.rate * usd;
-            }
-            return -1;
+        cal: function(usd) {
+          if (currency._allowed) {
+             return this.rate * usd;
           }
-        };
+          return -1;
+        }
+      };
 
-        let gbp = helper.cal(usd);
-        gbp && console.log(`Exchanged ${usd} to ${this.country} ${gbp}`);
-      }
-    };
-    currency.exchange(100);
-  }
+      let gbp = helper.cal(usd);
+      gbp && console.log(`Exchanged ${usd} to ${this.country} ${gbp}`);
+    }
+  };
+  currency.exchange(100);
+}
   
