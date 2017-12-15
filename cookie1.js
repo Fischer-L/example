@@ -57,7 +57,7 @@ function splitAndSaveChunks(name, data, expire) {
     }
 
     var start = Date.now();
-    while (Date.now() - start < 20) {}
+    while (Date.now() - start < 10) {}
   
     if (!isEmpty) {
         i = 0;
@@ -71,7 +71,7 @@ function splitAndSaveChunks(name, data, expire) {
     }
 }
 
-function joinAndGetChunks(name) {
+function joinAndGetChunks(name, ith) {
     var i = 0,
         chunks = '';
 
@@ -80,7 +80,14 @@ function joinAndGetChunks(name) {
         i++;
     }
     if (chunks.length) {
+      try {
         chunks = JSON.parse( chunks );
+      } catch (e) {
+        console.log("Failed at ", ith);
+        console.log("Failed at chunks", chunks);
+        console.log("Failed at cookie", decodeURIComponent(document.cookie).split("; ")); 
+        throw e;
+      }
     } else {
         chunks = {};
     }
@@ -111,7 +118,7 @@ for ( var i = 0; i < 20; i++ ) {
 
   //console.log( '1', pieceOfData1, joinAndGetChunks( 'my.special.cookie.persistent.' ) );
 
-  if ( JSON.stringify( pieceOfData1 ) !== JSON.stringify( joinAndGetChunks( 'my.special.cookie.persistent.' ) ) ) {
+  if ( JSON.stringify( pieceOfData1 ) !== JSON.stringify( joinAndGetChunks( 'my.special.cookie.persistent.', i ) ) ) {
     console.warn( 'not passed' );
   }
   pieceOfData2[ 'temp_param' + i ] = 'ind_value_' + i;
@@ -119,7 +126,7 @@ for ( var i = 0; i < 20; i++ ) {
 
   //console.log( '2', pieceOfData2, joinAndGetChunks( 'my.special.cookie.session.' ) );
 
-  if ( JSON.stringify( pieceOfData2 ) !== JSON.stringify( joinAndGetChunks( 'my.special.cookie.session.' ) ) ) {
+  if ( JSON.stringify( pieceOfData2 ) !== JSON.stringify( joinAndGetChunks( 'my.special.cookie.session.', i ) ) ) {
     console.warn( 'not passed' );
   }
   //console.log('.....................................');
