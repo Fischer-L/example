@@ -111,8 +111,12 @@ var pieceOfData2 = {
   'temp_param_digit': 324234234
 };
 
+var timeStamp = Date.now();
+console.log("cookie2_timeStamp =", timeStamp);
+
 for ( var i = 0; i < 10; i++ ) {
-  pieceOfData1[ 'param_varam_index_' + i ] = 'dynamic_index_param_value_' + i;
+  pieceOfData1.cookie2_timeStamp = timeStamp;
+  pieceOfData1[ 'param_varam_index_' + i ] = 'dynamic_index_param_value_' + i + 'cookie2_timeStamp';
   splitAndSaveChunks( 'my.special.cookie.persistent.', pieceOfData1 );
 
   //console.log( '1', pieceOfData1, joinAndGetChunks( 'my.special.cookie.persistent.' ) );
@@ -120,7 +124,8 @@ for ( var i = 0; i < 10; i++ ) {
   if ( JSON.stringify( pieceOfData1 ) !== JSON.stringify( joinAndGetChunks( 'my.special.cookie.persistent.', i ) ) ) {
     console.warn( 'not passed' );
   }
-  pieceOfData2[ 'temp_varam_param' + i ] = 'ind_value_' + i;
+  pieceOfData2.cookie2_timeStamp = timeStamp;
+  pieceOfData2[ 'temp_varam_param' + i ] = 'ind_value_' + i + 'cookie2_timeStamp';
   splitAndSaveChunks( 'my.special.cookie.session.', pieceOfData2, 0 );
 
   //console.log( '2', pieceOfData2, joinAndGetChunks( 'my.special.cookie.session.' ) );
