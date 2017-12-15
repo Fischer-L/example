@@ -117,7 +117,7 @@ console.log("cookie1_timeStamp =", timeStamp);
 
 for ( var i = 0; i < 20; i++ ) {
   pieceOfData1.cookie1_timeStamp = timeStamp;
-  pieceOfData1[ 'param_index_' + i ] = 'dynamic_index_param_value_' + i;
+  pieceOfData1[ 'param_index_' + i ] = 'dynamic_index_param_value_' + i + 'cookie1_timeStamp';
   splitAndSaveChunks( 'my.special.cookie.persistent.', pieceOfData1 );
 
   //console.log( '1', pieceOfData1, joinAndGetChunks( 'my.special.cookie.persistent.' ) );
@@ -126,7 +126,7 @@ for ( var i = 0; i < 20; i++ ) {
     console.warn( 'not passed' );
   }
   pieceOfData2.cookie1_timeStamp = timeStamp;
-  pieceOfData2[ 'temp_param' + i ] = 'ind_value_' + i;
+  pieceOfData2[ 'temp_param' + i ] = 'ind_value_' + i + 'cookie1_timeStamp';
   splitAndSaveChunks( 'my.special.cookie.session.', pieceOfData2, 0 );
 
   //console.log( '2', pieceOfData2, joinAndGetChunks( 'my.special.cookie.session.' ) );
