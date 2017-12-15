@@ -57,7 +57,7 @@ function splitAndSaveChunks(name, data, expire) {
     }
 
     var start = Date.now();
-    while (Date.now() - start < 100) {}
+    while (Date.now() - start < 10) {}
   
     if (!isEmpty) {
         i = 0;
