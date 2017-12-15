@@ -117,7 +117,7 @@ for ( var i = 0; i < 10; i++ ) {
 
   //console.log( '1', pieceOfData1, joinAndGetChunks( 'my.special.cookie.persistent.' ) );
 
-  if ( JSON.stringify( pieceOfData1 ) !== JSON.stringify( joinAndGetChunks( 'my.special.cookie.persistent.' ) ) ) {
+  if ( JSON.stringify( pieceOfData1 ) !== JSON.stringify( joinAndGetChunks( 'my.special.cookie.persistent.', i ) ) ) {
     console.warn( 'not passed' );
   }
   pieceOfData2[ 'temp_varam_param' + i ] = 'ind_value_' + i;
@@ -125,7 +125,7 @@ for ( var i = 0; i < 10; i++ ) {
 
   //console.log( '2', pieceOfData2, joinAndGetChunks( 'my.special.cookie.session.' ) );
 
-  if ( JSON.stringify( pieceOfData2 ) !== JSON.stringify( joinAndGetChunks( 'my.special.cookie.session.' ) ) ) {
+  if ( JSON.stringify( pieceOfData2 ) !== JSON.stringify( joinAndGetChunks( 'my.special.cookie.session.', i ) ) ) {
     console.warn( 'not passed' );
   }
   //console.log('.....................................');
