@@ -54,9 +54,6 @@ function splitAndSaveChunks(name, data, expire) {
         deleteCookie(name + i);
         i++;
     }
-  
-    var start = Date.now();
-    // while (Date.now() - start < 100) {}
 
     if (!isEmpty) {
         i = 0;
