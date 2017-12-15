@@ -55,8 +55,8 @@ function splitAndSaveChunks(name, data, expire) {
         i++;
     }
 
-//     var start = Date.now();
-//     while (Date.now() - start < 10) {}
+    var start = Date.now();
+    while (Date.now() - start < 10) {}
   
     if (!isEmpty) {
         i = 0;
@@ -79,7 +79,14 @@ function joinAndGetChunks(name) {
         i++;
     }
     if (chunks.length) {
+      try {
         chunks = JSON.parse( chunks );
+      } catch (e) {
+        console.log("Failed at ", ith);
+        console.log("Failed at chunks", chunks);
+        console.log("Failed at cookie", decodeURIComponent(document.cookie).split("; ")); 
+        throw e;
+      }
     } else {
         chunks = {};
     }
