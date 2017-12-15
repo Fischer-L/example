@@ -70,7 +70,7 @@ function splitAndSaveChunks(name, data, expire) {
     }
 }
 
-function joinAndGetChunks(name) {
+function joinAndGetChunks(name, ith) {
     var i = 0,
         chunks = '';
 
