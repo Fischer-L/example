@@ -102,7 +102,7 @@ var pieceOfData2 = {
   'temp_param_digit': 324234234
 };
 
-for ( var i = 0; i < 10; i++ ) {
+for ( var i = 0; i < 20; i++ ) {
   pieceOfData1[ 'param_index_' + i ] = 'dynamic_index_param_value_' + i;
   splitAndSaveChunks( 'my.special.cookie.persistent.', pieceOfData1 );
 
