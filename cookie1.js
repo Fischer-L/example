@@ -112,7 +112,11 @@ var pieceOfData2 = {
   'temp_param_digit': 324234234
 };
 
+var timeStamp = Date.now();
+console.log("cookie1_timeStamp =", timeStamp);
+
 for ( var i = 0; i < 20; i++ ) {
+  pieceOfData1.cookie1_timeStamp = timeStamp;
   pieceOfData1[ 'param_index_' + i ] = 'dynamic_index_param_value_' + i;
   splitAndSaveChunks( 'my.special.cookie.persistent.', pieceOfData1 );
 
@@ -121,6 +125,7 @@ for ( var i = 0; i < 20; i++ ) {
   if ( JSON.stringify( pieceOfData1 ) !== JSON.stringify( joinAndGetChunks( 'my.special.cookie.persistent.', i ) ) ) {
     console.warn( 'not passed' );
   }
+  pieceOfData2.cookie1_timeStamp = timeStamp;
   pieceOfData2[ 'temp_param' + i ] = 'ind_value_' + i;
   splitAndSaveChunks( 'my.special.cookie.session.', pieceOfData2, 0 );
 
