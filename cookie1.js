@@ -51,6 +51,8 @@ function splitAndSaveChunks(name, data, expire) {
         i = 0,
         chunk;
     //console.log('after JSON.stringify splitAndSaveChunks', whole);
+  console.log("Before deleting, cookie 2", decodeURIComponent(document.cookie).split("; ")); 
+  
     while (getCookie(name + i)) {
         deleteCookie(name + i);
         i++;
