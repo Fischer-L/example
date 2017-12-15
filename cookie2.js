@@ -1,4 +1,4 @@
-document.write( '<script type="text/javascript" src="cookie3.js"></script>' );
+// document.write( '<script type="text/javascript" src="cookie3.js"></script>' );
 
 function getCookie(name) {
   var matches = document.cookie.match(new RegExp(
