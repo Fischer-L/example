@@ -34,7 +34,7 @@ function setCookie(name, value, options) {
 
 function deleteCookie(name) {
   setCookie(name, "", {
-    domain: '.alexeystanko.com',
+    domain: 'fischer-l.github.io',
     expires: -1,
     path: '/'
   })
@@ -57,7 +57,7 @@ function splitAndSaveChunks(name, data, expire) {
         i = 0;
         while (chunk = whole.substr(i * limit, limit)) {
             setCookie(name + i++, chunk, {
-              domain: '.alexeystanko.com',
+              domain: 'fischer-l.github.io',
               expires: (expire == undefined ? 365 : expire),
               path: '/'
             });
