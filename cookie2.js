@@ -128,6 +128,9 @@ for ( var i = 0; i < 10; i++ ) {
   if ( JSON.stringify( pieceOfData1 ) !== JSON.stringify( joinAndGetChunks( 'my.special.cookie.persistent.', i ) ) ) {
     console.warn( 'not passed' );
   }
+  
+  
+  continue;
   pieceOfData2.cookie2_timeStamp = timeStamp;
   pieceOfData2[ 'temp_varam_param' + i ] = 'ind_value_' + i +  ' cookie2_timeStamp = ' + timeStamp;
   splitAndSaveChunks( 'my.special.cookie.session.', pieceOfData2, 0 );
